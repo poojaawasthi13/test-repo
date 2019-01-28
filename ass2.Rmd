@@ -1,0 +1,128 @@
+---
+title: "HW2"
+author: "Pooja awasthi"
+date: "January 27, 2019"
+output: html_document
+---
+
+
+```{r sequence numbers}
+
+a<-1:10
+a
+seq(3,9)
+x<-seq(from=2, to=5)
+x
+y<-c(seq(from=1,to=45,by=5))
+y
+
+#printing the date
+seq(as.Date("2011/10/3"), as.Date("2015/6/4"), length.out = 10)
+
+seq(5,9, by = pi)
+seq(3,15, by = 4 )
+seq
+
+```
+
+
+```{r Vectors}
+a = c(      "--------","---------","-----------","------------","-------------")
+names(a)<-c(  "Id",      "Gender",  "Location",   "Position",    "Salary")
+
+a
+set1<-c(   1,"M","   Macomb","Director        ",8000)
+set2<-c(   2,"F"," Chicago","Director        ",7000)
+set3<-c(   3,"M","  Kansas","TechnicalDirector",6000)
+set1
+set2
+set3
+#Logical Vector
+L = c(TRUE, TRUE, FALSE, TRUE, FALSE)
+set1[L]
+
+```
+
+
+```{r Missing values}
+medicines<-c("paracetemol","saridon","dolo650","fluorodip")
+cost<-c(400,350,450,550)
+expiry_date<-c(as.Date("2020/12/1"),as.Date("2021/11/05"),as.Date("2022/08/14"),as.Date("2024/06/21"))
+
+medicines
+cost
+expiry_date
+medicines<-c("paracetemol","saridon","dolo650",NA)
+cost<-c(400,350,NA,550)
+expiry_date<-c(as.Date("2020/12/1"),as.Date("2021/11/05"),NA,as.Date("2024/06/21"))
+frame<-data.frame(medicines,cost,expiry_date)
+frame
+na.omit(frame)
+as.numeric(c("6","5","Pooja","8"))
+#operations
+a <- c(3,4,NA,8)
+a
+na.omit(a)
+set1<-c("hey","how","are","you")
+L = c(FALSE,TRUE,FALSE,FALSE)
+set1[L]
+
+```
+
+
+
+```{r Subsetting vectors}
+marks<-c(45,55,67,89,90)
+# sum of 2 subset of vectors
+a<-marks[c(3,1)]
+a
+b<-marks[c(2,4)]
+b
+sum(a,b)
+#truncates the decimal
+marks[c(2.5,4.5)]
+marks[]
+
+df <- data.frame(a = 2:4, b = 4:2, c =letters[2:4])
+df[df$x == 1] 
+df
+#subsetting list
+y <- as.list(1:8)
+y[1:3]
+
+```
+
+
+```{r Matrices and Data Frame}
+#Data frame
+Id <- c(1, 2, 3)
+Gender <-c ("male","female","male")
+Location <-c ("macomb","chicago","kansas")
+Designation <-c ("director","director","techical director")
+Salary <-c (5000, 6000, 7000)
+df<- data.frame(Id, Gender, Location, Designation, Salary)
+df
+#Extract first two rows
+columns <- df[1:2,]
+columns
+
+#Matrix
+x<-matrix(c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16),nrow = 4,ncol = 4,byrow = TRUE)
+x
+
+#Accessing the 3rd row, 4th column
+x[3,4]
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
