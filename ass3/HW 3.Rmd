@@ -1,0 +1,60 @@
+---
+title: "Untitled"
+author: "Pooja awasthi"
+date: "February 2, 2019"
+output: html_document
+---
+
+```{r}
+pooja <-read.csv("cars.csv",TRUE,",")
+pooja
+
+
+```
+
+```{r}
+test1<-pooja[,2]
+test1
+test2<-pooja[,4]
+test2
+
+```
+
+```{r}
+a=0
+c=0
+for(b in seq_along(test1)){
+  a=a+test1[b]
+  c=c+1
+  } 
+ans=a/c
+print(ans)
+
+```
+
+```{r}
+#function
+calculatefunction <- function(param)
+{
+  a1=0
+c1=0
+for(b1 in seq_along(param)){
+  a1=a1+param[b1]
+  c1=c1+1
+  } 
+ans1=a1/c1
+print(ans1)
+
+}
+calculatefunction(test1)
+
+
+```
+```{r}
+
+print(lapply(p <- list(test2),calculatefunction))
+
+```
+
+
+
