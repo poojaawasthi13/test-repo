@@ -8,15 +8,15 @@ output: html_document
 ```{r}
 library(rvest)
 
-UnemploymentLink <- read_html("https://www.bls.gov/web/laus/laumstrk.htm")
+UnemploymentRate <- read_html("https://www.bls.gov/web/laus/laumstrk.htm")
 
-Stateshtml<- html_nodes(UnemploymentLink, ".sub0" )
+Stateshtml<- html_nodes(UnemploymentRate," .sub0 " )
 
 Statestext <- html_text(Stateshtml)
-
 Statestext
 
-
+df <- data.frame(Statestext)
+df
 
 
   
