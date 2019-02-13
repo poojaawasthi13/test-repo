@@ -11,11 +11,12 @@ library(rvest)
 UnemploymentRate <- read_html("https://www.bls.gov/web/laus/laumstrk.htm")
 
 Stateshtml<- html_nodes(UnemploymentRate," .sub0 " )
+percentagehtml <- html_nodes(UnemploymentRate, ".datavalue")
 
 Statestext <- html_text(Stateshtml)
-Statestext
+percentagetext <- html_text(percentagehtml)
 
-df <- data.frame(Statestext)
+df <- data.frame(Statestext, percentagetext)
 df
 
 
