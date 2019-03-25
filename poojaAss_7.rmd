@@ -1,0 +1,17 @@
+
+
+
+```{r}
+
+library(dplyr)
+library(ggplot2)
+url<-read_html("http://www.worldometers.info/world-population/india-population/")
+url<-url%>%html_nodes("table") %>%.[3]%>% html_table(fill=TRUE)
+url<-data.frame(url)
+#names(url$Density..P.Km².)<-c("density")
+url
+str(url)
+ggplot(url,aes(x=Year,y= Fertility.Rate))+geom_point()+geom_smooth()
+  
+```
+
