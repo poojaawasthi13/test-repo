@@ -1,0 +1,25 @@
+
+
+```{r}
+url<-read_html("http://www.worldometers.info/world-population/world-population-by-year/")
+url<-url%>%html_nodes("table") %>%.[1]%>% html_table(fill=TRUE)
+
+#Population.millions.<-as.numeric(url$Population.millions.)
+url<-data.frame(url)
+url$Density<-as.numeric(url$Density.P.Km².)
+url$yearlyChange<-sub("%","",url$YearlyChange)
+url$yearlyChange<-as.numeric(url$yearlyChange)
+url<-url[1:69,]
+url
+par(mar=rep(0.2,4))
+KMeanCluster<-kmeans(url[,c(8,9)],centers = 2)
+names(KMeanCluster)
+url$cluster<-as.factor(KMeanCluster$cluster)
+
+plot(url$Density,url$yearlyChange,col=url$cluster,pch=19,cex=2)
+points(KMeanCluster$centers,col=1:2,pch=3,cex=3,lwd=3)
+
+
+```
+
+
